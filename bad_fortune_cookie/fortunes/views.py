@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from bad_fortune_cookie.fortunes.serializers import * 
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,4 +23,4 @@ class FortuneViewSet(viewsets.ModelViewSet):
     API endpoint that allows you to interact with fortunes
     """
     queryset = Fortune.objects.all()
-    serializer_class = FortuneSerializer 
+    serializer_class = FortuneSerializer
