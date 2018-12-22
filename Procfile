@@ -1,1 +1,1 @@
-web: gunicorn fortunes.wsgi --log-file -
+web: gunicorn bad_fortune_cookie.wsgi --log-file -
