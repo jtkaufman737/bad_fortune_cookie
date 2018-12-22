@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 """
 
 import os
-import django.core.handles.wsgi
+import django.core.handlers.wsgi
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bad_fortune_cookie.settings')
