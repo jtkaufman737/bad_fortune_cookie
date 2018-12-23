@@ -23,6 +23,6 @@ router.register(r'groups', views.GroupViewSet)
 router.register(r'fortunes', views.FortuneViewSet)
 
 urlpatterns = [
-   url(r'^api/v1', include(router.urls)), # auto generates based on ViewSets
+   url(r'^api/v1/', include(router.urls)), # auto generates based on ViewSets
    url(r'^api-auth', include('rest_framework.urls', namespace='rest_framework'))
 ]
