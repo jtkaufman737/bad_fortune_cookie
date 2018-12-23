@@ -9,7 +9,11 @@
         <div v-if="Object.keys(this.fortune).length > 1">
           {{ fortune.fortune }} <br/><br/>
           - {{ fortune.author }}<br/><br/><br/><br/>
-          Tags: <span class="tag"> {{ fortune.genre }}</span>
+          <div class="flexOneLine">
+            Tags: <div v-for="genre in fortune.genre">
+              <div class="tag">{{ genre }}</div>
+            </div>
+        </div>
         </div>
       </center>
   </div>
@@ -38,16 +42,17 @@ export default {
     getFortune: function () {
       axios({
         method:'get',
-        url:'https://cors-escape.herokuapp.com/https://bad-fortune-cookie.herokuapp.com/fortunes/',
+        url:'https://cors-escape.herokuapp.com/https://bad-fortune-cookie.herokuapp.com/api/v1/fortunes/',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': '*'
         }
       }).then(res => {
-        console.log(res.data.results.length)
-        let results = res.data.results;
+
+        let results = res.data;
         this.fortune = results[Math.floor(Math.random() * results.length)]
+        this.fortune.genre = this.fortune.genre.split(",")
       })
     }
   }
@@ -66,6 +71,21 @@ button {
   align-self:center;
   border-radius:5px;
   font-size:20px;
+}
+
+div.flexOneLine {
+  display:flex;
+  justify-content:center;
+  /* justify-content: space-around; */
+}
+
+.tag {
+  color:white;
+  background-color:#760de0;
+  padding:10px;
+  margin-left:15px;
+  border-radius:5px;
+  margin-top:-5px
 }
 
 div.center {
