@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com','localhost']
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Application definition
 
 INSTALLED_APPS = [
@@ -61,7 +61,10 @@ ROOT_URLCONF = 'bad_fortune_cookie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'dist')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'dist'),
+            os.path.join(BASE_DIR, 'dist/static')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
