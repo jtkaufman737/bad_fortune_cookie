@@ -17,4 +17,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class FortuneSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Fortune
-        fields = ('genre', 'fortune', 'author')
+        fields = ('genre', 'fortune', 'author','UUID')
