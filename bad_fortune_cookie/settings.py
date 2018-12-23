@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'dist/')
+   os.path.join(BASE_DIR, 'dist/static')
 ]
 
 db_from_env = dj_database_url.config(conn_max_age=500)
