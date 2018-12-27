@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
-import corsheaders
+import dj_database_url 
 #from whitenoise.django import DjangoWhiteNoise
 from rest_framework import *
 
